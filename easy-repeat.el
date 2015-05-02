@@ -70,6 +70,15 @@ The term \"command\" here, refers to an interactively callable function."
     (advice-remove command #'easy-repeat--repeat)))
 
 ;;;###autoload
+(defun easy-repeat-add-last-command ()
+  "Add the last command to `easy-repeat-command-list'."
+  (interactive)
+  (when (yes-or-no-p
+         (format "Add '%s' to `easy-repeat-command-list'? " last-command))
+    (add-to-list 'easy-repeat-command-list last-command)
+    (easy-repeat-mode +1)))
+
+;;;###autoload
 (define-minor-mode easy-repeat-mode
   "Repeat easily.
 Repeat by last short key, e.g., use 'o' to repeat 'C-x o'."
