@@ -1,4 +1,4 @@
-# easy-repeat.el
+# easy-repeat.el [![MELPA](http://melpa.org/packages/easy-repeat-badge.svg)](http://melpa.org/#/easy-repeat)
 `easy-repeat` enables you to easily repeat the previous command by using the
 last short key, for example, 'C-x o' 'o' 'o' 'o'...  will switch windows
 and 'M-x next-buffer RET' 'RET' 'RET' 'RET'... will switch buffers.
