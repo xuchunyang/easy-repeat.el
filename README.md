@@ -15,6 +15,5 @@ easily.
 To use: M-x easy-repeat-mode RET
 
 ## TODO
-- [ ] Drop Emacs 24.4 dependency for `advice-add` and `advice-remove`
 - [ ] Set up a timer to free repeat key
 - [ ] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
