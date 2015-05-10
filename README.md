@@ -16,4 +16,4 @@ To use: M-x easy-repeat-mode RET
 
 ## TODO
 - [ ] Set up a timer to free repeat key
-- [ ] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
+- [-] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'

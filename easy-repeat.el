@@ -41,12 +41,44 @@
 
 ;; ## TODO
 ;; - [ ] Set up a timer to free repeat key
-;; - [ ] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
+;; - [-] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
 
 ;;; Code:
 
 (defcustom easy-repeat-command-list
-  '(other-window next-buffer backward-page forward-page)
+  '(
+    ;; Emacs
+    other-window
+    next-buffer
+    scroll-other-window
+    recenter-top-bottom
+    kill-buffer
+    backward-page
+    forward-page
+    previous-error
+    next-error
+    scroll-up-command
+    scroll-down-command
+    beginning-of-defun
+    end-of-defun
+    ;; org-mode
+    org-previous-visible-heading
+    org-next-visible-heading
+    org-forward-heading-same-level
+    org-backward-heading-same-level
+    ;; outline
+    outline-up-heading
+    outline-next-visible-heading
+    outline-previous-visible-heading
+    outline-forward-same-level
+    outline-backward-same-level
+    ;; git-gutter
+    git-gutter:previous-hunk
+    git-gutter:next-hunk
+    ;; Paredit
+    paredit-forward
+    paredit-backward
+    paredit-backward-up)
   "List of commands for easy-repeat.
 The term \"command\" here, refers to an interactively callable function."
   :type '(repeat (choice function))
@@ -58,6 +90,7 @@ The term \"command\" here, refers to an interactively callable function."
     (set-transient-map
      (let ((map (make-sparse-keymap)))
        (define-key map (vector last-command-event) #'repeat)
+       (define-key map (vector (event-basic-type last-command-event)) #'repeat)
        map))))
 
 (defun easy-repeat--add ()
