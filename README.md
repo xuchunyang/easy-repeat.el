@@ -16,4 +16,9 @@ To use: M-x easy-repeat-mode RET
 
 ## TODO
 - [ ] Set up a timer to free repeat key
-- [-] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
+- [x] Allow shorter key, e.g., use single 'a' to repeat 'C-M-a'
+
+## More excellent similar projects
+- [abo-abo/hydra](https://github.com/abo-abo/hydra)
+- [myuhe/smartrep.el](https://github.com/myuhe/smartrep.el)
+- [leoliu/repeatable.el](https://github.com/leoliu/repeatable.el)
