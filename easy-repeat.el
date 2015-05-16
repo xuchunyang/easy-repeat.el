@@ -3,7 +3,7 @@
 ;; Copyright (C) 2015  Chunyang Xu
 
 ;; Author: Chunyang Xu <xuchunyang56@gmail.com>
-;; Version: 0.1
+;; Version: 0.2
 ;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: repeat, convenience
 ;; Created: 2015-05-02
