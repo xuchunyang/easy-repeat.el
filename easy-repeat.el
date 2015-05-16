@@ -111,6 +111,21 @@ The term \"command\" here, refers to an interactively callable function."
     (easy-repeat-mode +1)))
 
 ;;;###autoload
+(defun easy-repeat-add-key (key)
+  "Add the binding of KEY in current keymaps to `easy-repeat-command-list'."
+  (interactive "KAdd key: ")
+  (let ((binding (key-binding key))
+        (desp    (format-kbd-macro key)))
+    (cond ((null binding) (error "%s is undefined" desp))
+          ((eq binding #'keyboard-quit) (error "Unable to add `keyboard-quit'"))
+          (t (when (yes-or-no-p
+                    (format
+                     "Add '%s' ('%s') to `easy-repeat-command-list'? "
+                     desp binding))
+               (add-to-list 'easy-repeat-command-list binding)
+               (easy-repeat-mode +1))))))
+
+;;;###autoload
 (define-minor-mode easy-repeat-mode
   "Repeat easily.
 Repeat by last short key, e.g., use 'o' to repeat 'C-x o'."
